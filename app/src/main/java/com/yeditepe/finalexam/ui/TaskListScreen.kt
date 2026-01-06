@@ -8,18 +8,22 @@ import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.yeditepe.finalexam.model.Task
 import com.yeditepe.finalexam.viewmodel.TaskViewModel
+import androidx.navigation.compose.rememberNavController
+
 
 @Composable
-fun TaskListScreen(viewModel: TaskViewModel = viewModel()) {
+fun TaskListScreen(viewModel: TaskViewModel = viewModel(), navController: NavHostController) {
 
     // TODO 3: Read task list from ViewModel
     val taskList = viewModel.tasks
 
-
+    val navController = rememberNavController()
     Column {
         // TODO 4: Display task titles and completion status
         // Use a simple Column or LazyColumn
@@ -43,3 +47,4 @@ fun TaskRow(task: Task, navController: NavController) {
         }
     )
 }
+
