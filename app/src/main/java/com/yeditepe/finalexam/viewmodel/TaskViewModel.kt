@@ -21,8 +21,8 @@ class TaskViewModel : ViewModel() {
         // TODO 2: Update isCompleted for the given task
         val index = _tasks.indexOfFirst { it.id == taskId }
         if (index != -1) {
-            val taks = _tasks[index]
-            _tasks[index] = taks.copy(isCompleted = !taks.isCompleted)
+            val task = _tasks[index]
+            _tasks[index] = task.copy(isCompleted = !task.isCompleted)
         }
     }
 }
